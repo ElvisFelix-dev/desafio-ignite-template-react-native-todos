@@ -14,14 +14,14 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: StatusBar.currentHeight,
     paddingBottom: 44,
-    backgroundColor: '#273FAD',
+    backgroundColor: '#3E3E3E',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row'
   },
   headerText: {
     fontSize: 24,
-    color: '#FFF',
+    color: '#E1E1E6',
     fontFamily: 'Poppins-Regular',
   }
 });

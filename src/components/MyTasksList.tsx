@@ -21,48 +21,50 @@ interface MyTasksListProps {
 
 export function MyTasksList({ tasks, onLongPress, onPress }: MyTasksListProps) {
   return (
-    <FlatList
-      data={tasks}
-      keyExtractor={item => String(item.id)}
-      renderItem={({ item, index }) => {
-        return (
-          <TouchableOpacity
-            testID={`button-${index}`}
-            activeOpacity={0.7}
-            //TODO - use onPress, onLongPress and style props
-            onPress={() => onPress(item.id)}
-            onLongPress={() => onLongPress(item.id)}
-            style={item.done ? styles.taskButtonDone : styles.taskButton}
-          >
-            <View 
-              testID={`marker-${index}`}
-              //TODO - use style prop 
-              style={item.done ? styles.taskMarkerDone : styles.taskMarker}
-            />
-            <Text 
-              //TODO - use style prop
-              style={item.done ? styles.taskTextDone : styles.taskText}
+      <FlatList 
+        data={tasks}
+        keyExtractor={item => String(item.id)}
+        renderItem={({ item, index }) => {
+          return (
+            <TouchableOpacity
+              testID={`button-${index}`}
+              activeOpacity={0.7}
+              //TODO - use onPress, onLongPress and style props
+              onPress={() => onPress(item.id)}
+              onLongPress={() => onLongPress(item.id)}
+              style={item.done ? styles.taskButtonDone : styles.taskButton}
             >
-              {item.title}
-            </Text>
-          </TouchableOpacity>
-        )
-      }}
-      ListHeaderComponent={<FlatListHeaderComponent />}
-      ListHeaderComponentStyle={{
-        marginBottom: 20
-      }}
-      style={{
-        marginHorizontal: 24,
-        marginTop: 32
-      }}
-    />
+              <View 
+                testID={`marker-${index}`}
+                //TODO - use style prop 
+                style={item.done ? styles.taskMarkerDone : styles.taskMarker}
+              />
+              <Text 
+                //TODO - use style prop
+                style={item.done ? styles.taskTextDone : styles.taskText}
+              >
+                {item.title}
+              </Text>
+            </TouchableOpacity>
+          )
+        }}
+        ListHeaderComponent={<FlatListHeaderComponent />}
+        ListHeaderComponentStyle={{
+          marginBottom: 20
+        }}
+        style={{
+          marginHorizontal: 24,
+          marginTop: 32
+        }}
+      />
   )
 }
 
 const styles = StyleSheet.create({
+
+
   header: {
-    color: '#3D3D4D',
+    color: '#BF4AD4',
     fontSize: 24,
     fontFamily: 'Poppins-SemiBold'
   },
@@ -80,11 +82,11 @@ const styles = StyleSheet.create({
     width: 16,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#3D3D4D',
+    borderColor: '#12A952',
     marginRight: 10
   },
   taskText: {
-    color: '#3D3D4D',
+    color: '#E1E1E6',
   },
   taskButtonDone: {
     flex: 1,
@@ -92,7 +94,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     marginBottom: 4,
     borderRadius: 4,
-    backgroundColor: 'rgba(25, 61, 223, 0.1)',
+    backgroundColor: '#262626',
     flexDirection: 'row',
     alignItems: 'center'
   },
@@ -100,11 +102,11 @@ const styles = StyleSheet.create({
     height: 16,
     width: 16,
     borderRadius: 8,
-    backgroundColor: '#273FAD',
+    backgroundColor: '#12A952',
     marginRight: 10
   },
   taskTextDone: {
-    color: '#A09CB1',
+    color: '#E1E1E6',
     textDecorationLine: 'line-through'
   }
 })

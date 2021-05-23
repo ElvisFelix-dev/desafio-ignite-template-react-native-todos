@@ -20,6 +20,7 @@ export function TodoInput({ addTask }: TodoInputProps) {
       <TextInput 
         style={styles.input} 
         placeholder="Adicionar novo todo..."
+        placeholderTextColor="#E1E1E6"
         returnKeyType="send"
         //TODO - use value, onChangeText and onSubmitEditing props
         value={task}
@@ -41,7 +42,7 @@ export function TodoInput({ addTask }: TodoInputProps) {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    backgroundColor: '#F5F4F8',
+    backgroundColor: '#303030',
     borderRadius: 5,
     marginTop: -25,
     marginHorizontal: 40,
@@ -51,13 +52,13 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    backgroundColor: '#F5F4F8',
+    backgroundColor: '#303030',
     paddingLeft: 12,
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
   },
   inputIOSShadow: {
-    shadowColor: "#000",
+    shadowColor: "#000000",
     shadowOffset: {
       width: 0,
       height: 2
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   addButton: {
-    backgroundColor: '#3FAD27',
+    backgroundColor: '#181818',
     height: 50,
     paddingHorizontal: 16,
     justifyContent: 'center',
